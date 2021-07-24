@@ -9,6 +9,7 @@
                     <th>ID</th>
                     <th>First name</th>
                     <th>Last name</th>
+                    <th>Documents</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                     <td>{{ person.id }}</td>
                     <td>{{ person.firstname }}</td>
                     <td>{{ person.lastname }}</td>
+                    <td><span role="button" onclick="window.open('data/sample.pdf', '_blank');"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></span></td>
                 </tr>
             </tbody>
         </table>
