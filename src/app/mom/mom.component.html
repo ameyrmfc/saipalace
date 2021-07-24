@@ -1,0 +1,23 @@
+<div class="card mt-3">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table dt-responsive nowrap w-100 table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of persons">
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.firstname }}</td>
+                    <td>{{ person.lastname }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
