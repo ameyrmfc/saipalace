@@ -1,17 +1,12 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header">
         <h5 class="card-title">Name</h5>
-        <p class="card-text">Nikhil Sawant</p>
+        <p class="card-text">{{ data.name }}</p>
     </div>
     <!-- <img src="http://localhost:4200/data/default_profile.png" class="card-img-top" alt="..."> -->
     <img src="data/def.png" class="card-img-top" alt="...">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>Desgination :</b> Secretary </li>
-        <li class="list-group-item"><b>Contact No :</b> 4562228696</li>
-        <!-- <li class="list-group-item">A third item</li> -->
+        <li class="list-group-item"><b>Desgination :</b> {{ data.designation }} </li>
+        <li class="list-group-item"><b>Contact No :</b> {{ data.contactno }} </li>
     </ul>
-    <!-- <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-    </div> -->
 </div>

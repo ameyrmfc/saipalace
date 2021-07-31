@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "saipalace-c8f59": {
+      "hosting": {
+        "saipalace": [
+          "saipalace-c8f59"
+        ]
+      }
+    }
+  }
+}

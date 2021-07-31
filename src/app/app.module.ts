@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { MomComponent } from './mom/mom.component';
 import { MomModule } from './mom/mom.module';
 import { AboutusModule } from './aboutus/aboutus.module';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { AboutusModule } from './aboutus/aboutus.module';
        { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
     MomModule,
-    AboutusModule
+    AboutusModule,
+    GoogleMapsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

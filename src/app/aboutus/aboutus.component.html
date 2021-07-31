@@ -1,5 +1,12 @@
-<div class="row mt-4">
-    <div class="col-md-3 mb-3" *ngFor='let in of counter(20) ;let i = index'>
-        <app-memberdetails></app-memberdetails>
+<div class="card mt-4">
+    <div class="card-header">
+        <b>Member Details</b>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 mb-3" *ngFor='let member of this.memberdetails;let i = index'>
+                <app-memberdetails [data]="member"></app-memberdetails>
+            </div>
+        </div>
     </div>
 </div>

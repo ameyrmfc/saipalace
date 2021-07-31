@@ -7,17 +7,17 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>Name</th>
+                    <th>Description</th>
                     <th>Documents</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let person of persons">
-                    <td>{{ person.id }}</td>
-                    <td>{{ person.firstname }}</td>
-                    <td>{{ person.lastname }}</td>
-                    <td><span role="button" onclick="window.open('data/sample.pdf', '_blank');"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></span></td>
+                <tr *ngFor="let m of mom;let i=index">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ m.name }}</td>
+                    <td>{{ m.description }}</td>
+                    <td><span role="button" (click)="this.openPdf(m.pdf_path)"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></span></td>
                 </tr>
             </tbody>
         </table>
