@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MomAddComponent } from './mom-add/mom-add.component';
 import { MomComponent } from './mom.component';
 
 const routes: Routes = [
-    {path:"momlist",component:MomComponent}
+    {path:"momlist",component:MomComponent},
+    {path:"momadd",component:MomAddComponent}
   ];
 
 @NgModule({

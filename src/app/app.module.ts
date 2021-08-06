@@ -10,19 +10,24 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LoginComponent } from './login/login.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    // LoginComponent,
   ],
   imports: [
     BrowserModule,
     // AppRoutingModule,
     RouterModule.forRoot([
+      // { path: 'login', component: LoginComponent },
       { path: 'welcome', component: MomComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
        { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
+    LoginModule,
     MomModule,
     AboutusModule,
     GoogleMapsModule,

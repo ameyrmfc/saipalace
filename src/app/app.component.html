@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" [routerLink]="['/momlist']" routerLinkActive='active'>
             <i class="fa fa-building" aria-hidden="true"></i> SaiPalace</a>
@@ -13,9 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/aboutus']" routerLinkActive='active'>About us</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/momadd']" routerLinkActive='active'>Add Data</a>
+                </li>
             </ul>
             <span class="navbar-text">
         Logout
