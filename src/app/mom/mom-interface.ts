@@ -12,3 +12,12 @@ export interface Mom {
     name: string
     pdf_path: string
 }
+
+export interface User{
+    uid: string
+    email: string
+    emailVerified: boolean
+    displayName: string
+    createdAt: string
+}
+

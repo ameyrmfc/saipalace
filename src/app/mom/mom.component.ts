@@ -1,9 +1,10 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs'; 
-import { Mom, Person } from './mom-interface';
+import { Mom, Person, User } from './mom-interface';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { data } from 'jquery';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mom',
@@ -12,7 +13,8 @@ import { data } from 'jquery';
 })
 
 export class MomComponent implements OnInit,OnDestroy {
-
+  showAddBtn: boolean=false
+  todo!: Observable<Mom[]>;   
   dtOptions: DataTables.Settings = {};
   persons: Person[] = [];
   mom: Mom[]=[]
@@ -24,23 +26,26 @@ export class MomComponent implements OnInit,OnDestroy {
 
 
   ngOnInit(): void {
-    let todo: Observable<Mom[]>;   
-    
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 5
+      pageLength: 10
+      
     };
     // todo = this.store.collection('meeting_details').valueChanges({ idField: 'id' }) as unknown  as Observable<Mom[]>;
-    todo = this.store.collection('meeting_details').valueChanges() as Observable<Mom[]>;
+    this.todo = this.store.collection('meeting_details').valueChanges() as Observable<Mom[]>;
     
-    todo.subscribe(
+    this.todo.pipe(take(1)).subscribe(
       data  =>{
-        console.log(data)
         this.mom = data
         // Calling the DT trigger to manually render the table
         this.dtTrigger.next();
       }
      );
+     let userdata = localStorage.getItem('user')
+     const user: User = JSON.parse(userdata?userdata:"");
+     if(user.email === "admin@saipalace.com"){
+       this.showAddBtn=true
+     }
   }
 
   ngOnDestroy(): void {

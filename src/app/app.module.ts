@@ -23,9 +23,8 @@ import { LoginModule } from './login/login.module';
     // AppRoutingModule,
     RouterModule.forRoot([
       // { path: 'login', component: LoginComponent },
-      { path: 'welcome', component: MomComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+       { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ]),
     LoginModule,
     MomModule,

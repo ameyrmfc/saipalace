@@ -1,0 +1,96 @@
+<!-- <div class="row mt-4 w-100 p-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <b>Login</b>
+            </div>
+            <div class="card-body p-5">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" formControlName="Email" type="email" id="exampleInputEmail1" placeholder="Enter your email" (blur)="logValidationErrors()" tabindex="1" autofocus aria-describedby="emailHelp">
+                        <span class="text-danger" *ngIf="formErrors.Email">
+                            {{formErrors.Email}}
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" formControlName="Password" placeholder="Enter your password" (blur)="logValidationErrors()">
+                        <span class="text-danger " *ngIf="formErrors.Password ">
+                            {{formErrors.Password}}
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!loginForm.valid ">Log In</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3"></div>
+</div> -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Login #01</h2>
+                </div> -->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-5">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-user-o"></span>
+                        </div>
+                        <h3 class="text-center mb-4">Sign In</h3>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+                            <div class="form-group ">
+                                <input type="email " class="form-control rounded-left " formControlName="Email" id="Email" placeholder="Enter your email " (blur)="logValidationErrors()">
+                                <span class="text-danger" *ngIf="formErrors.Email">
+                                    {{formErrors.Email}}
+                                </span>
+                            </div>
+                            <div class="form-group d-flex ">
+                                <input type="password" class="form-control rounded-left" id="password" formControlName="Password" placeholder="Enter your password" (blur)="logValidationErrors()">
+                            </div>
+                            <span class="text-danger " *ngIf="formErrors.Password">
+                                {{formErrors.Password}}
+                            </span>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3" [disabled]="!loginForm.valid || saveLoading">
+                                    <span  *ngIf="saveLoading" class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true" ></span>
+                                    <span> Login</span>
+                                </button>
+                            </div>
+                            <span [ngClass]="{'text-success':flag == 'true','text-danger': flag == 'false'}" *ngIf="message">
+                                {{message}}
+                            </span>
+                            <div class="form-group d-md-flex">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

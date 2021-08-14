@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+        <b>Add Minutes Of Meetings</b>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="adddata" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="Name" id="Name" (blur)="logValidationErrors()" aria-describedby="emailHelp">
+
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                <span class="text-danger" *ngIf="formErrors.Name">
+                {{formErrors.Name}}
+            </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Desc" class="form-label">Description</label>
+                <input type="text" class="form-control" id="Desc" formControlName="Desc" (blur)="logValidationErrors()">
+                <span class="text-danger" *ngIf="formErrors.Desc">
+                {{formErrors.Desc}}
+            </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="File" class="form-label">Upload</label>
+                <input class="form-control" type="file" id="File" (change)="onFileChange($event)" accept="application/pdf" formControlName="File" (blur)="logValidationErrors()">
+                <span class="text-danger" *ngIf="formErrors.File">
+                {{formErrors.File}}
+            </span>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary btn-rounded waves-effect waves-light width-md mr-1" [disabled]="saveLoading || !adddata.valid">
+                    <!--   -->
+                <span  *ngIf="saveLoading" class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true" ></span>
+                <span> Submit</span>
+            </button>
+            </div>
+        </form>
+    </div>
+</div>

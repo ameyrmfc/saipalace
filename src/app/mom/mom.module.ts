@@ -7,6 +7,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { MomAddComponent } from './mom-add/mom-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
-    MomRoutingModule
+    MomRoutingModule,
+    AngularFirestoreModule
+    
   ]
 })
 export class MomModule { }

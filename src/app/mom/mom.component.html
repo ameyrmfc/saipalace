@@ -1,6 +1,14 @@
 <div class="card">
     <div class="card-header">
-        <b>Featured</b>
+        <!-- <b>Featured</b> -->
+        <div class="row mb-1">
+            <div class="col-md-5"><b>Featured</b></div>
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <!-- <li><a href="#" class="nav-link px-2 link-dark" [routerLink]="[ '/momadd'] " routerLinkActive='active'>Add Details</a></li> -->
+                <button type="button" class="btn btn-outline-primary" [routerLink]="[ '/momadd'] " routerLinkActive='active' *ngIf="showAddBtn">Add Details</button>
+            </div>
+        </div>
     </div>
     <div class="card-body">
         <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table dt-responsive nowrap w-100 table-hover">
