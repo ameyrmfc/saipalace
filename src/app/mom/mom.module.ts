@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MomAddComponent } from './mom-add/mom-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,8 +23,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     HttpClientModule,
     DataTablesModule,
     MomRoutingModule,
-    AngularFirestoreModule
-    
+    AngularFirestoreModule,
+    SharedModule
   ]
 })
 export class MomModule { }

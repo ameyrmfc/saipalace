@@ -12,10 +12,15 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
+import { ViewPdfComponent } from './shared/view-pdf/view-pdf.component';
+import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
+    // HomeComponent,
     // LoginComponent,
   ],
   imports: [
@@ -23,6 +28,7 @@ import { LoginModule } from './login/login.module';
     // AppRoutingModule,
     RouterModule.forRoot([
       // { path: 'login', component: LoginComponent },
+      { path: 'viewpdf', component: ViewPdfComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
        { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ]),
@@ -30,8 +36,10 @@ import { LoginModule } from './login/login.module';
     MomModule,
     AboutusModule,
     GoogleMapsModule,
+    HomeModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

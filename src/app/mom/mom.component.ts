@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { data } from 'jquery';
 import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mom',
@@ -22,7 +23,7 @@ export class MomComponent implements OnInit,OnDestroy {
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private httpClient: HttpClient,private store: AngularFirestore) { }
+  constructor(private route: Router,private store: AngularFirestore) { }
 
 
   ngOnInit(): void {
@@ -54,6 +55,7 @@ export class MomComponent implements OnInit,OnDestroy {
   }
   
   openPdf(url:string){
-    window.open(url,'_blank')
+    // window.open(url,'_blank')
+    this.route.navigate(['/viewpdf'],{ queryParams:  {"url":url}, skipLocationChange: true})
   }
 }
